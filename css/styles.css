@@ -213,12 +213,20 @@ display: flex;
 }
 
 .x-mark, .x-mark-mobile {
+  	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
   display: none;
   position: relative;
 }
 
 .dropdown-input:checked + .dropdown-label .x-mark {
   display: inline-block;
+}
+
+.x-mark svg {
+  pointer-events: none; /* Clicks pass through to parent span to optimize click through*/
 }
 
 /* SECTION */
@@ -239,6 +247,10 @@ display: flex;
 }
 
 #capabilities .x-mark {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  box-sizing: content-box;
   left: 1100px;
   top: -18px;
 }
@@ -249,7 +261,7 @@ font-size: 96px;
 font-style: normal;
 font-weight: 600;
 line-height: 100%; /* 96px */
-display: block;
+display: inline-block;
 margin-bottom: 24px;
 }
 
@@ -293,11 +305,15 @@ margin-bottom: 24px;
   color: var(--black-color);
 }
 
-.CAP-image{
+.CAP-image-DT{
   flex: 2;
   max-width: 748px;
   min-width: 65%;
   box-sizing: border-box;
+}
+
+.CAP-image-MB{
+  display: none;
 }
 
 /* SECTION */
@@ -668,8 +684,13 @@ footer a:hover{
     flex-direction: column-reverse;
   }
 
-  .CAP-image{
-    width: 400px;
+  .CAP-image-DT{
+display: none;
+  }
+
+  .CAP-image-MB{
+    display: block;
+    width: 100%;
     margin:0;
     padding: 0;
   }
