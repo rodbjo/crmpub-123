@@ -1,0 +1,817 @@
+:root {
+  --font-main: 'Manrope', sans-serif;
+  --lightest-grey-color: #EAEAEA;
+  --light-grey-color: #D8D8D8;
+  --dark-grey-color: #1b1b1b;
+  --white-color: #fff;
+  --black-color: #000;
+  --gold-color: #9E843D;
+  --accent: rgb(105, 177, 255); /* placeholder */
+}
+
+html {
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body {
+  font-family: var(--font-main);
+  background: var(--dark-grey-color);
+  padding: 0;
+  margin: 0;
+}
+
+#wrapper {
+  max-width: 1200px;
+  min-width: 400px;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+header {
+    background: var(--dark-grey-color);
+}
+
+section {
+  /* border-bottom: 1px solid #586467; */
+}
+
+h1 {
+    color: var(--gold-color);
+    font-size: 128px;
+    line-height: 128px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+h2 {
+  color: var(--dark-grey-color);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+/* MANIFESTO - START */
+
+#manifesto {
+    padding-inline: 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    background: var(--dark-grey-color);
+    color: var(--white-color);
+}
+
+.first-section,
+.second-section,
+.third-section,
+.signoff {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    column-gap: 24px;
+}
+
+.first-section p,
+.second-section p,
+.third-section p {
+    margin: 0;
+    grid-column: span 9;
+}
+
+.gold-highlight {
+    color: var(--gold-color);
+}
+
+.first-section {
+    margin-top: 68px;
+    margin-bottom: 96px;
+}
+
+.first-section .txt-md span:first-child {
+    grid-column: 1 / span 3;
+}
+
+.first-section .txt-md span:last-child {
+    grid-column: 2 / span 4;
+}
+
+.first-section p:nth-child(1) {
+    grid-column: 1 / span 5;
+}
+
+.first-section p:nth-child(2) {
+    grid-column: 6 / span 4;
+}
+
+.first-section .txt-copy{
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.second-section p:nth-child(2) {
+  margin-top: 4px;
+  line-height: 128px;
+  text-align: right;
+}
+
+.third-section p {
+    grid-column: 6 / span 4;
+    font-weight: 600;
+    line-height: 38px;
+    margin-bottom: 32px;
+}
+
+.third-section p:last-child {
+    margin-bottom: 0;
+}
+
+.signoff p {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    font-size: 132px;
+    margin-top: -3px;
+    margin-bottom: 154px;
+}
+
+.signoff p span:nth-child(1) {
+    grid-column: 1;
+}
+
+.signoff p span:nth-child(2) {
+    grid-column: 6;
+}
+
+.txt-md {
+    font-size: 64px;
+    line-height: 100%;
+    font-weight: 600;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+.txt-lg {
+    font-size: 128px;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: -2.56px;
+}
+
+.txt-copy {
+    font-size: 32px;
+    line-height: 120%;
+}
+
+/* MANIFESTO - END */
+
+/* RODRIGO - START */
+
+
+
+/* DROPDOWN FUNCTIONALITY */
+.dropdown-input {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* HOVER OVER ANIMATED FUNCTIONALITY */
+.OT-dropdown-box:hover, .CAP-dropdown-box:hover, .OW-dropdown-box:hover{
+  /* background: var( --white-color);
+  transition: background-color 300ms linear; */
+  cursor: pointer;
+}
+
+/* CLICK THROUGH FUNCTIONALITY */
+
+.dropdown-input:checked + label + .OW-dropdown-box, .dropdown-input:checked + label + .OT-dropdown-box, .dropdown-input:checked + label + .CAP-dropdown-box {
+
+  max-height: 4000px; /* enough height to show full content */
+}
+
+.dropdown-input:checked + label + .OT-dropdown-wrapper,  .dropdown-input:checked + label + .OW-dropdown-wrapper, .dropdown-input:checked + label + .CAP-dropdown-wrapper{
+display: flex;
+}
+
+/* X MARK */
+.dropdown-label {
+  line-height: 0;
+  position: relative;
+}
+
+.x-mark, .x-mark-mobile {
+  display: none;
+  position: relative;
+}
+
+.dropdown-input:checked + .dropdown-label .x-mark {
+  display: inline-block;
+}
+
+/* SECTION */
+/* CAPABILITIES */
+
+#capabilities{
+  background: var(--dark-grey-color);
+}
+
+.CAP-dropdown-box{
+  background-color: var(--white-color);
+  border-radius: 24px 24px 0 0;
+  padding-bottom: 32px;
+}
+
+#capabilities h2{
+  font-size: 181px;
+}
+
+#capabilities .x-mark {
+  left: 1100px;
+  top: -18px;
+}
+
+#capabilities h3{
+color: var(--black-color);
+font-size: 96px;
+font-style: normal;
+font-weight: 600;
+line-height: 100%; /* 96px */
+display: block;
+margin-bottom: 24px;
+}
+
+.CAP-dropdown-wrapper{
+  display: none;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 24px 9px;
+  gap: 56px 0;     /* Row spacing only, column spacing handled by width */
+  box-sizing: border-box;
+}
+
+.CAP-dropdown-card{
+  padding-bottom: 31px;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+.CAP-dropdown-card:last-child{
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.CAP-content{
+  display: flex;
+  flex-direction: row;
+  gap: 0 20px;
+  }
+
+.CAP-content p{
+  flex: 1;
+  min-width: 33%;
+  margin-top: 166px;
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  width: 95%;
+  color: var(--black-color);
+}
+
+.CAP-image{
+  flex: 2;
+  max-width: 748px;
+  min-width: 65%;
+  box-sizing: border-box;
+}
+
+/* SECTION */
+/* OUR WORK */
+#our-work{
+  background-color: var(--white-color);
+  scroll-margin-top: 80px;
+}
+
+.OW-dropdown-box{
+  background: var(--lightest-grey-color);
+  border-radius: 24px 24px 0 0;
+  padding-bottom: 32px;
+}
+
+#our-work h2{
+  font-size: 218px;
+}
+
+#our-work .x-mark {
+  left: 1102px;
+  top: -20px;
+}
+
+.OW-dropdown-wrapper{
+  display: none;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 96px 0 40px;
+  gap: 56px 0;     /* Row spacing only, column spacing handled by width */
+  box-sizing: border-box;
+}
+
+.OW-dropdown-brand{
+  display: flex;
+  flex-direction: column;
+  gap: 0 20px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+.OW-dropdown-brand:last-child{
+  padding-bottom: 30px;
+  border-bottom: none;
+}
+
+.OW-text-content{
+  padding-left: 24px;
+  max-width: 376px;
+  min-width: 33%;
+  margin-bottom: 24px;
+}
+
+.OW-text-content p {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--black-color);
+}
+
+.OW-image{
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.verizon-logo, .verizon-busines-logo, .total-wireless-logo{
+  width: 224px;
+  height: auto;
+  margin-bottom: 32px;
+}
+
+.straight-talk-logo, .visible-logo{
+  width: 183px;
+  height: auto;
+  margin-bottom: 32px;
+}
+
+/* SECTION */
+/* OUR TEAM PHOTO GRID*/
+#our-team{
+  background: var(--lightest-grey-color);
+}
+
+#our-team h2{
+  font-size: 230px;
+}
+
+#our-team .x-mark {
+  left: 1100px;
+  top: -20px;
+}
+
+#our-team h3{
+  color: var(--black-color);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 38.4px */
+  margin-top: 24px;
+  margin-bottom: 8px;
+
+}
+
+.OT-dropdown-box {
+  background: var(--light-grey-color); 
+  border-radius: 24px 24px 0 0;
+  padding-bottom: 33px;
+}
+
+.OT-dropdown-wrapper {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 24px; /* Equal left/right margins */
+  gap: 24px 0;     /* Row spacing only, column spacing handled by width */
+  box-sizing: border-box;
+}
+
+.OT-dropdown-card {
+  display: flex;
+  flex-direction: column; 
+  flex: 0 1 calc((100% - 48px) / 3); /* 3 cards, 2 gaps of 24px */
+  max-width: 368px;
+  margin-bottom: 56px;
+  box-sizing: border-box;
+}
+
+.OT-dropdown-card:last-child(-n+3){
+  margin-bottom: 24px;
+}
+
+.OT-dropdown-card img{
+  border-radius: 24px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.OT-dropdown-card p{
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0;
+}
+
+/* SECTION */
+/* FOOTER */
+footer{
+  background: var(--dark-grey-color, #1B1B1B);
+  padding: 50px 24px 48px;
+}
+
+.footer-wrapper{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 30px;
+  gap: 0 24px; /* Column spacing only*/
+  box-sizing: border-box;
+  justify-content: flex-start;
+  }
+
+.footer-contact, .footer-locations, .footer-social{
+  flex: 1;
+}
+
+.footer-wrapper p{
+  color: var(--white-color, #FFF);
+  line-height: 22px;
+  letter-spacing: 0.3px;
+}
+
+.footer-social img{
+  display: inline-block;
+  width: 26px;
+  height: auto;
+}
+
+.footer-locations{
+  margin-top: 0;
+}
+
+.footer-social a{
+  margin-right: 58px;
+}
+
+footer a:hover{
+  color: var(--gold-color, #9E843D);
+  cursor: pointer;
+}
+
+
+/* RODRIGO - END */
+
+@media (max-width:480px) {
+
+  #wrapper{
+    max-width: 480px;
+    width: 100%;
+  }
+
+#manifesto,  #our-work, #capabilities, #our-team, footer{
+    width: 100%;
+    margin: 0 auto;
+  }
+    
+    /* MANIFESTO - START */
+
+    /* #manifesto {
+        max-width: 100%;
+        margin: 0 auto;
+    row-gap: 40px;
+    } */
+
+    .first-section,
+    .second-section,
+    .third-section,
+    .signoff {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .first-section{
+    row-gap:40px;
+    margin-bottom:48px;
+    margin-top:40px;
+    }
+
+    .first-section p,
+    .second-section p,
+    .third-section p,
+    .first-section .txt-md span:first-child,
+    .first-section .txt-md span:last-child,
+    .first-section p:nth-child(1),
+    .first-section p:nth-child(2) {
+        grid-column: 1 / -1;
+    }
+
+    .first-section .txt-md span:last-child {
+        text-align: right;
+    }
+
+    .txt-md {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: -0.025rem;
+        display: grid;
+        grid-template-columns: subgrid;
+    }
+
+    .txt-md span:first-child {
+        grid-column: 1;
+    }
+
+    .txt-md span:last-child {
+        grid-column: 2;
+    }
+
+    .txt-lg {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        letter-spacing: -0.07rem;
+    }
+
+    .second-section {
+        grid-template-columns: 1fr;
+    }
+
+    .second-section p:first-child {
+        max-width: 300px;
+        grid-column: 1;
+        margin-bottom:18px;
+    }
+
+    .second-section p:nth-child(2) {
+      margin-top: 0;
+      line-height: 1;
+    }
+
+    .third-section p{
+        margin-bottom:1.5rem;
+    }
+
+    .second-section p:last-child {
+        max-width: 227px;
+        grid-column: 1;
+        margin-left: auto;
+        text-align: right;
+    }
+
+
+    .txt-copy {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    .signoff p {
+        display: grid;
+        grid-template-columns: subgrid;
+        font-size: 56px;
+        line-height: 56px;
+        margin-bottom:88px;
+    }
+
+    .signoff p span:nth-child(1) {
+        grid-column: 1;
+    }
+
+    .signoff p span:nth-child(2) {
+        grid-column: 2;
+    }
+
+    /* MANIFESTO - END */
+
+    /* RODRIGO - START */
+
+    h1{
+    font-size: 39px;
+  }
+
+  .dropdown-input:checked + .dropdown-label .x-mark {
+    display: none;
+  }
+
+  .dropdown-input:checked + .dropdown-label .x-mark-mobile {
+    display: inline-block;
+  }
+
+  #capabilities h2{
+    font-size: 55px;
+  }
+
+  #capabilities h3{
+  font-size: 40px;
+  padding-left: 29px;
+  }
+
+  #capabilities .x-mark-mobile {
+    left: 342px;
+    top: 7px;
+  }
+
+  .CAP-dropdown-box{
+    padding-bottom: 16px;
+  }
+
+  .CAP-dropdown-wrapper{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 7px;
+  }
+
+  .CAP-content p {
+    padding-left: 29px;
+    padding-right: 29px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .CAP-content{
+    flex-direction: column-reverse;
+  }
+
+  .CAP-image{
+    max-width: 480px;
+  }
+
+  #our-work h2{
+    font-size: 66px;
+  }
+
+  #our-work .x-mark-mobile {
+    left: 342px;
+    top: 6px;
+  }
+
+  .OW-dropdown-box, .OT-dropdown-box{
+    padding-bottom: 16px;
+  }
+
+  .OW-dropdown-wrapper{
+    padding-top: 0;
+  }
+
+  .OW-dropdown-brand{
+
+  }
+
+  .OW-text-content{
+    margin: 0 auto;
+    max-width: 422px;
+    width: 100%;
+    padding-left: 0;
+    padding-bottom: 24px;
+  }
+
+  .OW-text-content p {
+    font-size: 16px;
+  }
+
+  .OW-image{
+    max-width: 480px;
+  }
+
+  #our-team h2{
+    font-size: 70px;
+  }
+
+  #our-team h3{
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+  }
+
+  #our-team .x-mark-mobile {
+    left: 342px;
+    top: 6px;
+  }
+
+  .OT-dropdown-wrapper {
+    padding-top: 8px;
+  }
+
+  .OT-dropdown-card {
+    flex: 0 1 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .OT-dropdown-card img {
+    width: 164px;
+    height: 164px;
+    flex-shrink: 0;
+  }
+  
+  .OT-dropdown-card h3,
+  .OT-dropdown-card p {
+    text-align: left;
+  }
+
+  .OT-dropdown-card p {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .OT-text-content {
+    margin-left: 24px;
+    flex: 1;
+  }
+
+  .footer{
+    padding-top: 24px;
+  }
+
+  .footer-wrapper{
+    flex-direction: column;
+    margin-bottom: 24px;
+    }
+
+  .footer-locations{
+    margin-top: 64px;
+  }
+
+  .footer-social{
+    margin-top: 64px;
+  }
+
+    /* RODRIGO - END */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+.panel {
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@media (max-width: 900px) {
+  .OT-dropdown-card {
+    flex: 0 1 calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .OT-dropdown-card {
+    flex: 0 1 100%;
+  }
+}
+
+*/
