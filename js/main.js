@@ -25,6 +25,23 @@ function autoScaleText(el) {
     }
   });
 
+  //X mark closing functionality
+  function clearRadioSelection(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const targetId = event.currentTarget.getAttribute("data-target");
+    if (targetId) {
+      const input = document.getElementById(targetId);
+      if (input && input.type === "radio") {
+        input.checked = false;
+      }
+    }
+  }
+
+  document.querySelectorAll(".x-mark, .x-mark-mobile").forEach(el => {
+    el.addEventListener("click", clearRadioSelection);
+  });
   // Run on load and on resize
   window.addEventListener('load', scaleAllH1s);
   window.addEventListener('resize', scaleAllH1s);
