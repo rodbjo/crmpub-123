@@ -668,7 +668,7 @@ footer a:hover{
   }
 
   .CAP-image{
-    max-width: 480px;
+    width: 100%;
   }
 
   #our-work h2{
